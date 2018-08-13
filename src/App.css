@@ -1,0 +1,122 @@
+html {background-color: #F8E691}
+
+.AccountLine{
+  display: block;
+}
+
+.App {
+  text-align: center;
+  background-color: #F8E691;
+  height:100%;
+}
+
+.App-logo {
+  height: 20em;
+}
+
+.App-header {
+  border-spacing: 5px;
+  width: 100%;
+  text-align: center;
+  margin:auto;
+  background-color: #90D7EF;
+}
+
+.App-header-td{
+  padding: 15px;
+  border: 0px;
+  /* border-collapse: collapse; */
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Cursive{
+  font-family: "Lucida Calligraphy", cursive;
+}
+.Footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #66C39E;
+  color: white;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.Home{
+  /* background-color: #FAE58F; */
+  padding-top: 3em;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  /* font-family: cursive; */
+}
+
+h4{
+display: inline-block;
+}
+.LoginForm{
+
+}
+
+.LoginInput{
+  display: inline;
+  border-radius: 2px;
+  border-color: black;
+  border-width: 2px;
+  margin: 0.5em;
+  height: 2em;
+
+}
+
+.LoginButton{
+  background-color: black;
+  color: white;
+  height: 2.2em;
+  border-style: none;
+  border-radius: 2px;
+}
+.logo {
+  position: relative;
+  height: 5em;
+  /* float: left; */
+}
+.map{
+  max-width: 40%;
+  width: 35%;
+  height: auto;
+  margin: 2em;
+
+  float: left;
+  margin-left: 8em;
+  /* padding: 2em; */
+}
+.Middle{
+  float: right;
+  margin-right: 2em;
+  width: 40%
+}
+.NewAccountForm {
+  padding-bottom: 3em;
+}
+.NewAccountButton{
+  background-color: #90D7EF;
+  color: white;
+  height: 2.2em;
+  padding-left: 9.2em;
+  padding-right: 9.2em;
+  border-style: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+/* @keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} */
