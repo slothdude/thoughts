@@ -3,7 +3,7 @@ import FeedForm from './FeedForm.js';
 import Banner from './Banner.js';
 import firebase from 'firebase';
 import NewsFeed from './NewsFeed.js';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Redirect, Router, Route, Link } from "react-router-dom";
 import Profile from './Profile.js';
 
 class Home extends Component {
@@ -30,7 +30,6 @@ class Home extends Component {
       <div className="App">
         <Banner />
         <div className="App">
-          <Link to="/profile">Profile page</Link>
           <FeedForm onMessageSubmit = {this.handleMessageSubmit}/>
           <NewsFeed />
         </div>

@@ -35,3 +35,14 @@ the whole page:
 ![prob2.PNG](./src/prob2.PNG)
 I fixed this by doing `html {background-color: #F8E691}`. I never knew you could
 style the entire html document.
+
+## React
+
+1. I was having a lot of trouble making the pictures at the top be links using
+react-router. I tried nesting the image inside the link like
+`<Link to="/">
+  <img src={logo}>
+ </Link>`
+and also tried putting a `background-img` property on the link. The image would 
+show up, but the link wouldn't redirect. Eventually, I found [a component on stackoverflow](https://stackoverflow.com/a/49439893/5570385) that I changed to
+be [an image instead of a button](./src/LinkImage.jsx).

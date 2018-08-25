@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import autobind from 'class-autobind';
 import Dropzone from 'react-dropzone';
+import Banner from './Banner';
 
 class Profile extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
+        <Banner />
         <Dropzone
           accept="image/*"
           onDrop= {this.onDrop}>

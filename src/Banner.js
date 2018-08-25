@@ -1,5 +1,8 @@
 import React from 'react';
 import logo from './thoughts-logo.svg';
+import profileLogo from './profile-logo.svg';
+import { BrowserRouter as Link } from "react-router-dom";
+import LinkImage from './LinkImage';
 
 //why doesnt it behave like the css rules in chef?
 const Banner = props => {
@@ -8,13 +11,19 @@ const Banner = props => {
       <tbody>
         <tr>
           <td className="App-header-td">
-            <img src = {logo} className = "logo" alt = "thoughts logo"/>
+            <LinkImage to = "/"
+                       src = {logo}
+                       className = "logo"
+                       alt = "go to home page" />
           </td>
           <td className="App-header-td">
             <h2 className = "Cursive">Thoughts?</h2>
           </td>
           <td className="App-header-td">
-            <img src = {logo} className = "logo" alt = "go to profile page" />
+            <LinkImage to = "/profile"
+                       src = {profileLogo}
+                       className = "logo"
+                       alt = "go to profile page" />
           </td>
         </tr>
       </tbody>
