@@ -44,8 +44,9 @@ react-router. I tried nesting the image inside the link like
   <img src={logo}>
  </Link>`
 and also tried putting a `background-img` property on the link. The image would
-show up, but the link wouldn't redirect. Eventually, I found [a component on
-stackoverflow] that I changed to be [an image instead of a button].
+show up, but the link wouldn't redirect. Eventually, I found
+[a component on stackoverflow] that I changed to be
+[an image instead of a button].
 
 [a component on stackoverflow]: https://stackoverflow.com/a/49439893/5570385
 [an image instead of a button]: ./src/LinkImage.jsx
