@@ -40,13 +40,15 @@ style the entire html document.
 
 1. I was having a lot of trouble making the pictures at the top be links using
 react-router. I tried nesting the image inside the link like
-`<Link to="/">
+```
+<Link to="/">
   <img src={logo}>
- </Link>`
-and also tried putting a `background-img` property on the link. The image would
+ </Link>
+ ```
+and also tried putting a ```background-img``` property on the link. The image would
 show up, but the link wouldn't redirect. Eventually, I found
 [a component on stackoverflow] that I changed to be
 [an image instead of a button].
 
-[a component on stackoverflow]: https://stackoverflow.com/a/49439893/5570385
-[an image instead of a button]: ./src/LinkImage.jsx
+[a component on stackoverflow]: https://stackoverflow.com/a/49439893/5570385/
+[an image instead of a button]: ./src/LinkImage.jsx/
