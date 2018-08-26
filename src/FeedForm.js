@@ -9,6 +9,7 @@ class FeedForm extends Component {
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleTextChange(e) {
     this.setState({ text: e.target.value });
   }
@@ -22,10 +23,12 @@ class FeedForm extends Component {
     this.props.onMessageSubmit({ message: text });
     this.setState({ text: '' });
   }
+
   render() {
     return (
       <form  onSubmit={ this.handleSubmit }>
         <input
+          className = "FeedForm"
           type='text'
           placeholder='Leave a thought'
           value={ this.state.text }

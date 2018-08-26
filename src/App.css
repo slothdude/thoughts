@@ -39,6 +39,19 @@ html {background-color: #F8E691}
 .Cursive{
   font-family: "Lucida Calligraphy", cursive;
 }
+
+.FeedForm {
+
+  width: 30%;
+  border-radius: 2px;
+  /* border-color: black; */
+  border-width: 2px;
+  border-style:ridge;
+  margin: 0.5em;
+  height: 2em;
+
+}
+
 .Footer {
   position: fixed;
   left: 0;
@@ -78,7 +91,6 @@ display: inline-block;
   border-width: 2px;
   margin: 0.5em;
   height: 2em;
-
 }
 
 .LoginButton{
@@ -125,12 +137,28 @@ display: inline-block;
   border-spacing: 5px;
   width: 100%;
   text-align: center;
-  margin:auto;
+  margin-top: 4em;
+  /* margin:auto; */
+}
 
+.NewsFeed-message{
+  padding: 35px;
+  /* border: 1px solid black; */
+  border-style: outset;
+  margin: 10em;
+  /* border-collapse: collapse; */
+  width: 70%;
+  word-break: break-all;
 }
 
 .NewsFeed-td{
   padding: 15px;
-  border: 0px;
+  /* border: 1px solid black; */
+  border-style: outset;
+  margin: 10em;
   /* border-collapse: collapse; */
+}
+
+p{
+  font-size: 2em;
 }

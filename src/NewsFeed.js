@@ -2,17 +2,27 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import autobind from 'class-autobind';
 import lodash from 'lodash';
-
+import Name from './Name';
+import Picture from './Picture';
 //individual newsfeed component, like each post is one 'Value'
 class Value extends Component {
-    render() {
-        const {keyProp, valProp} = this.props;
-        return (
-          <tr className = "NewsFeed-td">
-              <td><p>{keyProp}: {valProp}</p></td>
-          </tr>
-        );
-    }
+  constructor(props){
+    super(props);
+    autobind(this);
+  }
+
+  render() {
+    const {keyProp, valProp} = this.props;
+    return (
+      <tr>
+        <td className = "NewsFeed-td">
+          <Picture id = {keyProp}/>
+          <Name id = {keyProp} />
+        </td>
+        <td className = "NewsFeed-message"><p>{valProp}</p></td>
+      </tr>
+    );
+  }
 }
 
 class NewsFeed extends Component {
@@ -30,12 +40,14 @@ class NewsFeed extends Component {
       var allPosts = snapshot.val();
       var keys = Object.keys(allPosts);
       var values = [];
+      var names = [];
       keys.forEach(function(key) {
         //var userDataRef = firebase.database().ref(`users/${key}/data`)
+        names.push(allPosts[key].user);
         values.push(allPosts[key].message);
       });
       if (snapshot.val() !==null){
-        this.setState({ keys: keys, values: values });
+        this.setState({ keys: names, values: values });
       }
     });
   }

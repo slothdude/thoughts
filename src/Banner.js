@@ -4,7 +4,6 @@ import profileLogo from './profile-logo.svg';
 import { BrowserRouter as Link } from "react-router-dom";
 import LinkImage from './LinkImage';
 
-//why doesnt it behave like the css rules in chef?
 const Banner = props => {
   return(
     <table className="App-header">

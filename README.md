@@ -45,10 +45,21 @@ react-router. I tried nesting the image inside the link like
   <img src={logo}>
  </Link>
  ```
-and also tried putting a ```background-img``` property on the link. The image would
-show up, but the link wouldn't redirect. Eventually, I found
+and also tried putting a ```background-img``` property on the link. The image
+would show up, but the link wouldn't redirect. Eventually, I found
 [a component on stackoverflow] that I changed to be
 [an image instead of a button].
 
 [a component on stackoverflow]: https://stackoverflow.com/a/49439893/5570385/
 [an image instead of a button]: ./src/LinkImage.jsx/
+
+2. I was wondering why the page was refreshing whenever I submitted a form.
+Fix: place `e.preventDefault();` in `handleSubmit(e)` handler function.
+
+3. I was having some problems with displaying the name instead of the ID created
+for the post by `firebase.database().ref('posts').push();`, javascripts annoying
+synchronicity strikes again: the state wasn't updating before I was trying to
+use it. I fixed this by making
+[a separate component for getting the name].
+
+[a separate component for getting the name]: ./src/Name.js/
