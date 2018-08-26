@@ -121,7 +121,16 @@ display: inline-block;
   border-radius: 5px;
   font-size: 1em;
 }
-/* @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
+.NewsFeed {
+  border-spacing: 5px;
+  width: 100%;
+  text-align: center;
+  margin:auto;
+
+}
+
+.NewsFeed-td{
+  padding: 15px;
+  border: 0px;
+  /* border-collapse: collapse; */
+}

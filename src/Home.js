@@ -18,7 +18,7 @@ class Home extends Component {
   handleMessageSubmit(message) {
     const { currentUser } = firebase.auth();
     var userId = currentUser.uid;
-    var databaseRef = firebase.database().ref('posts/test1').push();
+    var databaseRef = firebase.database().ref('posts').push();
     databaseRef.set({ user: userId, message: message.message });
     var userRef = firebase.database().ref(`users/${userId}/posts`).push();
     userRef.set({ message: message.message });

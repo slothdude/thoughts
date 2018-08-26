@@ -35,7 +35,6 @@ class App extends Component {
       messagingSenderId: "911129959870"
     });
     document.title = "Thoughts..?";
-    firebase.database().ref('test/test1').set({ first: 'Ada', last: 'Lovelace' });
   }
 
   //helper function to set user upon login because was getting an error on "this" in anonymous function
@@ -57,7 +56,8 @@ class App extends Component {
       .then(() => {
         const { currentUser } = firebase.auth();
         var userRef = firebase.database().ref(`users/${currentUser.uid}/data`);
-        userRef.set({uid: currentUser.uid, email: currentUser.email});
+        userRef.set({uid: currentUser.uid, email: currentUser.email,
+                     name: currentUser.uid});
         console.log('success creation of acc, check user database');
         this.onLogin();
       })
