@@ -1,5 +1,6 @@
 //FeedForm.js
 import React, { Component } from 'react';
+import firebase from 'firebase';
 
 //should add posts list so can see individual user's posts
 class FeedForm extends Component {
@@ -14,13 +15,21 @@ class FeedForm extends Component {
     this.setState({ text: e.target.value });
   }
 
+  handleMessageSubmit(message) {
+    const { currentUser } = firebase.auth();
+    var userId = currentUser.uid;
+    var databaseRef = firebase.database().ref('posts').push();
+    databaseRef.set({ user: userId, message: message.message });
+    var userRef = firebase.database().ref(`users/${userId}/posts`).push();
+    userRef.set({ message: message.message });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let text = this.state.text.trim();
-    if (!text) {
+    if (!text)
       return;
-    }
-    this.props.onMessageSubmit({ message: text });
+    this.handleMessageSubmit({ message: text });
     this.setState({ text: '' });
   }
 

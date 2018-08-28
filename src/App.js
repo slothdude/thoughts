@@ -59,7 +59,11 @@ class App extends Component {
         var userRef = firebase.database().ref(`users/${currentUser.uid}/data`);
         userRef.set({uid: currentUser.uid, email: currentUser.email,
                      name: currentUser.uid});
-        console.log('success creation of acc, check user database');
+        //add default profile picture to database
+        // var file = new Blob(profileLogo);
+        // var storageRef = firebase.storage().ref();
+        // var propicRef = storageRef.child(`propics/${currentUser.uid}/${file.name}`);
+        // var uploadTask = propicRef.put(file);
         this.onLogin();
       })
       .catch(function(error) {
@@ -71,6 +75,7 @@ class App extends Component {
           console.log(errorCode + errorMessage);
         }
       });
+
     }
   }
 

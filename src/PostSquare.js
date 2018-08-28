@@ -4,7 +4,7 @@ import Name from './Name';
 import Picture from './Picture';
 
 //component for the picture and name for each post
-//uses inline styling onPress, see ./Message.js for css attribute way
+//uses inline styling onPress, see ./NewsFeed.js for css attribute way
 class PostSquare extends Component {
   constructor(props){
       super(props);

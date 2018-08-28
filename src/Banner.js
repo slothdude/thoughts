@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './thoughts-logo.svg';
 import profileLogo from './profile-logo.svg';
-import { BrowserRouter as Link } from "react-router-dom";
 import LinkImage from './LinkImage';
 
+//Ribbon at top with the navigation icons
 const Banner = props => {
-  return(
+  return
+  (
     <table className="App-header">
       <tbody>
         <tr>
@@ -27,7 +28,7 @@ const Banner = props => {
         </tr>
       </tbody>
     </table>
-  )
+  );
 }
 
 export default Banner;
