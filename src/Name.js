@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import autobind from 'class-autobind';
 
+//looks up the name for the user based off the user id 
 class Name extends Component {
   constructor(props) {
     super(props);

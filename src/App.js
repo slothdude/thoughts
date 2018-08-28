@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 //logo from https://www.iconfinder.com/icons/667355/aha_brilliance_idea_think_thought_icon
 import logo from './thoughts-logo.svg';
+import profileLogo from './profile-logo.svg';
 import autobind from 'class-autobind';
 import LoginForm from './LoginForm.js';
 import Home from './Home.js';

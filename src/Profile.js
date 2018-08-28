@@ -3,6 +3,7 @@ import firebase from 'firebase';
 import autobind from 'class-autobind';
 import Dropzone from 'react-dropzone';
 import Banner from './Banner';
+import profileLogo from './profile-logo.svg';
 import { withRouter } from 'react-router'
 
 class Profile extends Component {
@@ -10,7 +11,8 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = { accepted:[], rejected:[], image: null, name: "",
-                   nameField: "", userId: "", uploadpercent: 0 };
+                   nameField: "", propicURL: profileLogo, userId: "",
+                   uploadpercent: 0 };
     autobind(this);
   }
 
@@ -18,6 +20,7 @@ class Profile extends Component {
     this.setState({ nameField: e.target.value });
   }
 
+  //handle new name submit
   handleSubmit(e){
     e.preventDefault();
     let text = this.state.nameField.trim();
@@ -28,10 +31,6 @@ class Profile extends Component {
     var nameRef = firebase.database().ref(`users/${userId}/data`);
     nameRef.update({name: this.state.nameField});
     this.setState({ nameField: '' });
-  }
-
-  getState(){
-      return this.state;
   }
 
   //handle when file is selected for upload
@@ -56,19 +55,25 @@ class Profile extends Component {
     });
   }
 
-  //need to download picture from url
-  componentWillMount(){
+  componentDidMount(){
     const { currentUser } = firebase.auth();
     var userId = currentUser.uid;
     this.setState({userId});
+    //get current name
     var nameRef = firebase.database().ref(`users/${userId}/data/name`);
     nameRef.on('value', snapshot => {
       var name = snapshot.val();
       this.setState({name});
     });
+    //update state with propic url in database, if none then keep using default
+    var urlRef = firebase.database().ref(`users/${userId}/data/propicURL`);
+      urlRef.on('value', snapshot => {
+      console.log(snapshot.val());
+      if(snapshot.val() != null)
+        this.setState({propicURL: snapshot.val()});
+    });
   }
 
-  //add image into render function
   render() {
     return (
       <div className = "App">
@@ -88,7 +93,7 @@ class Profile extends Component {
           onChange = { (e) => this.onDrop(e.target.files)}
         />
         <p>Current picture:</p>
-
+        <img src = {this.state.propicURL} className = 'logo'/>
       </div>
     )
   }

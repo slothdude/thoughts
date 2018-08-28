@@ -2,24 +2,23 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import autobind from 'class-autobind';
 import lodash from 'lodash';
-import Name from './Name';
-import Picture from './Picture';
-//individual newsfeed component, like each post is one 'Value'
+import PostSquare from './PostSquare';
+import Message from './Message';
+
+//individual newsfeed component, each post is one 'Value'
 class Value extends Component {
   constructor(props){
     super(props);
     autobind(this);
   }
 
+  //with each postId and message, creates post
   render() {
     const {keyProp, valProp} = this.props;
     return (
       <tr>
-        <td className = "NewsFeed-td">
-          <Picture id = {keyProp}/>
-          <Name id = {keyProp} />
-        </td>
-        <td className = "NewsFeed-message"><p>{valProp}</p></td>
+        <PostSquare keyProp = {keyProp}/>
+        <Message message = {valProp}/>
       </tr>
     );
   }
@@ -32,7 +31,7 @@ class NewsFeed extends Component {
     autobind(this);
   }
 
-  //fills state from database
+  //fills state with the posts from database
   getData(){
     //add something to databse here before uncomment
     var postRef = firebase.database().ref('posts');
@@ -53,7 +52,6 @@ class NewsFeed extends Component {
   }
 
   listItems(){
-    console.log(this.state);
     const { keys, values } = this.state;
     if (values === null) {
       this.getData();

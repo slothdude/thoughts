@@ -146,9 +146,14 @@ display: inline-block;
   /* border: 1px solid black; */
   border-style: outset;
   margin: 10em;
-  /* border-collapse: collapse; */
+  border-width: 1em;
   width: 70%;
   word-break: break-all;
+}
+
+/* newsfeed-td does this with inline styling, just to show a different way */
+.NewsFeed-message[pressed = "true"]{
+  border-style: inset;
 }
 
 .NewsFeed-td{
@@ -156,6 +161,8 @@ display: inline-block;
   /* border: 1px solid black; */
   border-style: outset;
   margin: 10em;
+  border-width: 1em;
+  word-break: break-all;
   /* border-collapse: collapse; */
 }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase from 'firebase';
 import autobind from 'class-autobind';
 
 class LoginForm extends Component {
